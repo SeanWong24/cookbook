@@ -35,6 +35,7 @@ export class AppHome extends LitElement {
       <main>
         home
         <ui5-link href="/about">About</ui5-link>
+        <ui5-link href="/edit">Edit</ui5-link>
 
         <pwa-install>Install Cookbook</pwa-install>
       </main>

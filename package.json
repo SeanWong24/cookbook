@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev-server": "vite --open",
+    "dev-server.no-open": "vite",
     "dev": "npm run dev-server",
     "dev-task": "vite",
     "deploy": " npx @azure/static-web-apps-cli login --no-use-keychain && npx @azure/static-web-apps-cli deploy",
@@ -16,7 +17,9 @@
   "license": "ISC",
   "dependencies": {
     "@pwabuilder/pwainstall": "^1.6.7",
-    "@shoelace-style/shoelace": "^2.0.0-beta.82",
+    "@ui5/webcomponents": "^1.9.3",
+    "@ui5/webcomponents-fiori": "^1.9.3",
+    "@ui5/webcomponents-icons": "^1.9.3",
     "@vaadin/router": "^1.7.4",
     "lit": "^2.3.1",
     "workbox-build": "^6.5.2",

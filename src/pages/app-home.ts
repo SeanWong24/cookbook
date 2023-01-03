@@ -1,24 +1,21 @@
-import { LitElement, css, html } from 'lit';
-import { property, customElement } from 'lit/decorators.js';
+import {LitElement, css, html} from 'lit';
+import {property, customElement} from 'lit/decorators.js';
 
 // For more info on the @pwabuilder/pwainstall component click here https://github.com/pwa-builder/pwa-install
 import '@pwabuilder/pwainstall';
 
 import '@ui5/webcomponents/dist/Link.js';
 
-import { styles } from '../styles/shared-styles';
+import {styles} from '../styles/shared-styles';
 
 @customElement('app-home')
 export class AppHome extends LitElement {
-
   // For more information on using properties and state in lit
   // check out this link https://lit.dev/docs/components/properties/
   @property() message = 'Welcome!';
 
   static get styles() {
-    return [
-      styles,
-      css``];
+    return [styles, css``];
   }
 
   constructor() {

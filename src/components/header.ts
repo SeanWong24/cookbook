@@ -12,6 +12,12 @@ export class AppHeader extends LitElement {
 
   static get styles() {
     return css`
+      :host {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+
       ui5-label {
         user-select: none;
       }

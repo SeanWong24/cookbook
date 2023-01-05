@@ -19,6 +19,7 @@ export class AppHeader extends LitElement {
       }
 
       ui5-label {
+        pointer-events: none;
         user-select: none;
       }
     `;

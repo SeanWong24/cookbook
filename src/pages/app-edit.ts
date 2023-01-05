@@ -81,7 +81,7 @@ export class AppHome extends LitElement {
 
   render() {
     return html`
-      <app-header></app-header>
+      <app-header title="Cookbook - Edit"></app-header>
 
       <awesome-wrap>
         <main class="content">

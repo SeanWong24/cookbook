@@ -68,7 +68,7 @@ export class AppHome extends LitElement {
       action: 'slice',
       tools: ['knife', 'chopping board'],
     },
-    {}
+    {},
   ];
 
   static get styles() {
@@ -83,84 +83,86 @@ export class AppHome extends LitElement {
     return html`
       <app-header></app-header>
 
-      <main class="content">
-        ${this.steps?.map(
-          (step, i) => html`
-            <ui5-card>
-              <ui5-card-header
-                slot="header"
-                status=${`Step ${i + 1} of ${this.steps?.length ?? 0}`}
-              >
-                <ui5-button
-                  slot="action"
-                  icon="less"
-                  design="Negative"
-                  tooltip="Remove step"
-                ></ui5-button>
-              </ui5-card-header>
-              <div style="padding: 0.5rem;">
-                <ui5-title level="H3">You should prepare</ui5-title>
-                <ui5-list separators="Inner">
-                  ${step.input?.map(
-                    (item) => html`
-                      <ui5-li
-                        description=${item?.adjectives?.join(', ') ?? ''}
-                        additional-text=${`${item.amount} ${item.unit}`}
-                        icon="less"
-                        >${item?.name}</ui5-li
-                      >
-                    `
-                  )}
-                  <ui5-li icon="add">add item</ui5-li>
-                </ui5-list>
-              </div>
-              <div style="padding: 0.5rem;">
-                <ui5-title level="H3"
-                  >You should
-                  <ui5-input
-                    value=${step?.action ?? ''}
-                    placeholder="Enter the action"
-                    show-clear-icon
-                  ></ui5-input
-                  > with</ui5-title
+      <awesome-wrap>
+        <main class="content">
+          ${this.steps?.map(
+            (step, i) => html`
+              <ui5-card>
+                <ui5-card-header
+                  slot="header"
+                  status=${`Step ${i + 1} of ${this.steps?.length ?? 0}`}
                 >
-                <ui5-list separators="Inner">
-                  ${step.tools?.map(
-                    (tool) => html` <ui5-li icon="less">${tool}</ui5-li> `
-                  )}
-                  <ui5-li icon="add">add item</ui5-li>
-                </ui5-list>
-              </div>
-              <div style="padding: 0.5rem;">
-                <ui5-title level="H3">You will get</ui5-title>
-                <ui5-list separators="Inner">
-                  ${step.output?.map(
-                    (item) => html`
-                      <ui5-li
-                        description=${item.adjectives?.join(', ') ?? ''}
-                        additional-text=${`${item.amount} ${item.unit}`}
-                        icon="less"
-                        >${item.name}</ui5-li
-                      >
-                    `
-                  )}
-                  <ui5-li icon="add">add item</ui5-li>
-                </ui5-list>
-              </div>
-            </ui5-card>
-          `
-        )}
-        <ui5-card>
-          <ui5-card-header slot="header" status="New step">
-            <ui5-button
-              slot="action"
-              icon="add"
-              design="Positive"
-              tooltip="Add step"
-            ></ui5-button>
-          </ui5-card-header>
-        </ui5-card>
-      </main>
+                  <ui5-button
+                    slot="action"
+                    icon="less"
+                    design="Negative"
+                    tooltip="Remove step"
+                  ></ui5-button>
+                </ui5-card-header>
+                <div style="padding: 0.5rem;">
+                  <ui5-title level="H3">You should prepare</ui5-title>
+                  <ui5-list separators="Inner">
+                    ${step.input?.map(
+                      (item) => html`
+                        <ui5-li
+                          description=${item?.adjectives?.join(', ') ?? ''}
+                          additional-text=${`${item.amount} ${item.unit}`}
+                          icon="less"
+                          >${item?.name}</ui5-li
+                        >
+                      `
+                    )}
+                    <ui5-li icon="add">add item</ui5-li>
+                  </ui5-list>
+                </div>
+                <div style="padding: 0.5rem;">
+                  <ui5-title level="H3"
+                    >You should
+                    <ui5-input
+                      value=${step?.action ?? ''}
+                      placeholder="Enter the action"
+                      show-clear-icon
+                    ></ui5-input>
+                    with</ui5-title
+                  >
+                  <ui5-list separators="Inner">
+                    ${step.tools?.map(
+                      (tool) => html` <ui5-li icon="less">${tool}</ui5-li> `
+                    )}
+                    <ui5-li icon="add">add item</ui5-li>
+                  </ui5-list>
+                </div>
+                <div style="padding: 0.5rem;">
+                  <ui5-title level="H3">You will get</ui5-title>
+                  <ui5-list separators="Inner">
+                    ${step.output?.map(
+                      (item) => html`
+                        <ui5-li
+                          description=${item.adjectives?.join(', ') ?? ''}
+                          additional-text=${`${item.amount} ${item.unit}`}
+                          icon="less"
+                          >${item.name}</ui5-li
+                        >
+                      `
+                    )}
+                    <ui5-li icon="add">add item</ui5-li>
+                  </ui5-list>
+                </div>
+              </ui5-card>
+            `
+          )}
+          <ui5-card>
+            <ui5-card-header slot="header" status="New step">
+              <ui5-button
+                slot="action"
+                icon="add"
+                design="Positive"
+                tooltip="Add step"
+              ></ui5-button>
+            </ui5-card-header>
+          </ui5-card>
+        </main>
+      </awesome-wrap>
     `;
   }
 }

@@ -1,6 +1,7 @@
 import {LitElement, css, html} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import {Router} from '@vaadin/router';
+import {defineCustomElements} from '@awesome-elements/layout/loader';
 
 import './pages/app-home';
 import './components/header';
@@ -96,3 +97,6 @@ export class AppIndex extends LitElement {
     `;
   }
 }
+
+/* @vite-ignore */
+defineCustomElements();

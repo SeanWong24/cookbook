@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@awesome-elements/layout": "^0.3.10",
     "@pwabuilder/pwainstall": "^1.6.7",
     "@ui5/webcomponents": "^1.9.3",
     "@ui5/webcomponents-fiori": "^1.9.3",
